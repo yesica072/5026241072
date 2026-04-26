@@ -4,8 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DosenController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('menu');
 });
+
 Route::get('halo', function () {
     return "<h1>Halo, Selamat Datang </h1> di tutorial laravel <b>www.malasngoding.com</b>";
 });
@@ -20,3 +21,31 @@ Route::get('pert5', function () {
 
 Route::get('dosen', [DosenController::class, 'index']);
 Route::get('biodata', [DosenController::class, 'biodata']);
+
+Route::get('pert1', function () {
+    return view('pertemuan1');
+});
+
+Route::get('news', function () {
+    return view('news');
+});
+
+Route::get('pert3', function () {
+    return view('template');
+});
+
+Route::get('responsive', function () {
+    return view('responsive');
+});
+
+Route::get('contoh', function () {
+    return view('contoh');
+});
+
+Route::get('5026241072', function () {
+    return view('5026241072');
+});
+
+Route::get('tugaspertemuan5', function () {
+    return view('tugaspertemuan5');
+});
