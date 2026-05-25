@@ -25,12 +25,18 @@ Route::get('pert5', function () {
 Route::get('dosen', [DosenController::class, 'index']);
 Route::get('biodata', [DosenController::class, 'biodata']);
 
-Route::get('/pegawai/{nama}', [PegawaiController::class, 'index']);
 Route::get('/formulir', [PegawaiController::class, 'formulir']);
 Route::post('/formulir/proses', [PegawaiController::class, 'proses']);
 
 Route::get('/pegawai', [PegawaiDBController::class, 'index']);
+Route::get('/pegawai/tambah', [PegawaiDBController::class, 'tambah']);
+Route::post('/pegawai/store', [PegawaiDBController::class, 'store']);
+Route::get('/pegawai/edit/{id}', [PegawaiDBController::class, 'edit']);
+Route::post('/pegawai/update', [PegawaiDBController::class, 'update']);
+Route::get('/pegawai/hapus/{id}', [PegawaiDBController::class, 'hapus']);
+Route::get('/pegawai/cari', [PegawaiDBController::class, 'cari']);
 
+Route::get('/pegawai/{nama}', [PegawaiController::class, 'index']);
 //blog
 Route::get('/blog', [BlogController::class, 'home']);
 Route::get('/blog/tentang', [BlogController::class, 'tentang']);
