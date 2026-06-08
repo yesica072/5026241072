@@ -6,6 +6,8 @@ use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\NilaikuliahController;
+use App\Http\Controllers\KeranjangController;
 
 Route::get('/', function () {
     return view('menu');
@@ -49,6 +51,18 @@ Route::post('/siswa', [SiswaController::class, 'store'])->name('siswa.store');
 Route::get('/siswa/{nrp}/edit', [SiswaController::class, 'edit'])->name('siswa.edit');
 Route::put('/siswa/{nrp}', [SiswaController::class, 'update'])->name('siswa.update');
 Route::delete('/siswa/{nrp}', [SiswaController::class, 'destroy'])->name('siswa.destroy');
+
+Route::get('/nilaikuliah', [NilaikuliahController::class, 'index'])->name('nilaikuliah.index');
+Route::get('/nilaikuliah/create', [NilaikuliahController::class, 'create'])->name('nilaikuliah.create');
+Route::post('/nilaikuliah', [NilaikuliahController::class, 'store'])->name('nilaikuliah.store');
+Route::get('/nilaikuliah/{nrp}/edit', [NilaikuliahController::class, 'edit'])->name('nilaikuliah.edit');
+Route::put('/nilaikuliah/{nrp}', [NilaikuliahController::class, 'update'])->name('nilaikuliah.update');
+Route::delete('/nilaikuliah/{nrp}', [NilaikuliahController::class, 'destroy'])->name('nilaikuliah.destroy');
+
+Route::get('/keranjang', [KeranjangController::class, 'index'])->name('keranjang.index');
+Route::get('/keranjang/create', [KeranjangController::class, 'create'])->name('keranjang.create');
+Route::post('/keranjang', [KeranjangController::class, 'store'])->name('keranjang.store');
+Route::delete('/keranjang/{id}', [KeranjangController::class, 'destroy'])->name('keranjang.destroy');
 
 Route::get('pert1', function () {
     return view('pertemuan1');
