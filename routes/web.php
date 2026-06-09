@@ -7,7 +7,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\NilaikuliahController;
-use App\Http\Controllers\KeranjangController;
+use App\Http\Controllers\KeranjangBelanjaDBController;
 
 Route::get('/', function () {
     return view('menu');
@@ -59,10 +59,10 @@ Route::get('/nilaikuliah/{nrp}/edit', [NilaikuliahController::class, 'edit'])->n
 Route::put('/nilaikuliah/{nrp}', [NilaikuliahController::class, 'update'])->name('nilaikuliah.update');
 Route::delete('/nilaikuliah/{nrp}', [NilaikuliahController::class, 'destroy'])->name('nilaikuliah.destroy');
 
-Route::get('/keranjang', [KeranjangController::class, 'index'])->name('keranjang.index');
-Route::get('/keranjang/create', [KeranjangController::class, 'create'])->name('keranjang.create');
-Route::post('/keranjang', [KeranjangController::class, 'store'])->name('keranjang.store');
-Route::delete('/keranjang/{id}', [KeranjangController::class, 'destroy'])->name('keranjang.destroy');
+Route::get('/keranjang-belanja', [KeranjangBelanjaDBController::class, 'index']);
+Route::get('/keranjang-belanja/beli', [KeranjangBelanjaDBController::class, 'beli']);
+Route::post('/keranjang-belanja/store', [KeranjangBelanjaDBController::class, 'store']);
+Route::get('/keranjang-belanja/batal/{id}', [KeranjangBelanjaDBController::class, 'batal']);
 
 Route::get('pert1', function () {
     return view('pertemuan1');
