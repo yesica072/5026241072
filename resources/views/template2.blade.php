@@ -34,6 +34,9 @@
                         <a class="nav-link" href="/siswa">Siswa</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="/beras">Beras</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#">EAS</a>
                     </li>
                 </ul>
