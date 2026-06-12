@@ -8,6 +8,7 @@ use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\NilaikuliahController;
 use App\Http\Controllers\KeranjangBelanjaDBController;
+use App\Http\Controllers\BerasController;
 
 Route::get('/', function () {
     return view('menu');
@@ -63,6 +64,10 @@ Route::get('/keranjang-belanja', [KeranjangBelanjaDBController::class, 'index'])
 Route::get('/keranjang-belanja/beli', [KeranjangBelanjaDBController::class, 'beli']);
 Route::post('/keranjang-belanja/store', [KeranjangBelanjaDBController::class, 'store']);
 Route::get('/keranjang-belanja/batal/{id}', [KeranjangBelanjaDBController::class, 'batal']);
+
+Route::get('/beras', [BerasController::class, 'index'])->name('beras.index');
+Route::get('/beras/create', [BerasController::class, 'create'])->name('beras.create');
+Route::post('/beras', [BerasController::class, 'store'])->name('beras.store');
 
 Route::get('pert1', function () {
     return view('pertemuan1');
