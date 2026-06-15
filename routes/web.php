@@ -9,6 +9,7 @@ use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\NilaikuliahController;
 use App\Http\Controllers\KeranjangBelanjaDBController;
 use App\Http\Controllers\BerasController;
+use App\Http\Controllers\easController;
 
 Route::get('/', function () {
     return view('menu');
@@ -52,6 +53,7 @@ Route::post('/siswa', [SiswaController::class, 'store'])->name('siswa.store');
 Route::get('/siswa/{nrp}/edit', [SiswaController::class, 'edit'])->name('siswa.edit');
 Route::put('/siswa/{nrp}', [SiswaController::class, 'update'])->name('siswa.update');
 Route::delete('/siswa/{nrp}', [SiswaController::class, 'destroy'])->name('siswa.destroy');
+Route::get('/siswa/view/{NRP}', [SiswaController::class, 'view'])->name('siswa.viewx`');
 
 Route::get('/nilaikuliah', [NilaikuliahController::class, 'index'])->name('nilaikuliah.index');
 Route::get('/nilaikuliah/create', [NilaikuliahController::class, 'create'])->name('nilaikuliah.create');
@@ -68,6 +70,15 @@ Route::get('/keranjang-belanja/batal/{id}', [KeranjangBelanjaDBController::class
 Route::get('/beras', [BerasController::class, 'index'])->name('beras.index');
 Route::get('/beras/create', [BerasController::class, 'create'])->name('beras.create');
 Route::post('/beras', [BerasController::class, 'store'])->name('beras.store');
+
+
+Route::get('/eas', [easController::class, 'index'])->name('eas.index');
+Route::get('/eas/create', [easController::class, 'create'])->name('eas.create');
+Route::post('/eas', [easController::class, 'store'])->name('eas.store');
+Route::get('/eas/{kode_pegawai}/edit', [easController::class, 'edit'])->name('eas.edit');
+Route::put('/eas/{kode_pegawai}', [easController::class, 'update'])->name('eas.update');
+Route::get('/eas/view/{kode_pegawai}', [easController::class, 'index'])->name('eas.view');
+
 
 Route::get('pert1', function () {
     return view('pertemuan1');

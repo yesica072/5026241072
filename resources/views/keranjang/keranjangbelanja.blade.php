@@ -28,5 +28,6 @@
             <tr>
                 <td colspan="6" class="text-center">Keranjang Belanja Kosong</td>
             </tr>
+            djds
         @endforelse
 @endsection
