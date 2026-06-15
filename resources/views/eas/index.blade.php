@@ -13,6 +13,7 @@
             <th>Nama Lengkap</th>
             <th>Divisi</th>
             <th>Departemen</th>
+            <th>Opsi</th>
         </tr>
     </thead>
     <tbody>
@@ -22,8 +23,12 @@
                 <td>{{ $row->namalengkap }}</td>
                 <td>{{ $row->divisi }}</td>
                 <td>{{ $row->departemen }}</td>
+                <td>
+                    <a href="/eas/view/{{ $row->kode_pegawai }}" class="btn btn-warning">View</a>
+                </td>
             </tr>
         @empty
+        <a href="/eas/view/{{ $row->kode_pegawai }}" class="btn btn-warning">View</a>
             <tr>
                 <td colspan="4" class="text-center text-muted">
                     Belum ada data eas.

@@ -75,9 +75,7 @@ Route::post('/beras', [BerasController::class, 'store'])->name('beras.store');
 Route::get('/eas', [easController::class, 'index'])->name('eas.index');
 Route::get('/eas/create', [easController::class, 'create'])->name('eas.create');
 Route::post('/eas', [easController::class, 'store'])->name('eas.store');
-Route::get('/eas/{kode_pegawai}/edit', [easController::class, 'edit'])->name('eas.edit');
-Route::put('/eas/{kode_pegawai}', [easController::class, 'update'])->name('eas.update');
-Route::get('/eas/view/{kode_pegawai}', [easController::class, 'index'])->name('eas.view');
+Route::get('/eas/view/{kode_pegawai}', [easController::class, 'view'])->name('eas.view');
 
 
 Route::get('pert1', function () {

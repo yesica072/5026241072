@@ -30,4 +30,12 @@ class easController extends Controller
 
     return redirect()->route('eas.index');
 }
+public function view($kode_pegawai)
+	{
+		// mengambil data pegawai berdasarkan id yang dipilih
+		$eas = DB::table('eas')->where('kode_pegawai',$kode_pegawai)->get();
+		// passing data pegawai yang didapat ke view edit.blade.php
+		return view('eas.view',['eas' => $eas]);
+
+	}
 }
